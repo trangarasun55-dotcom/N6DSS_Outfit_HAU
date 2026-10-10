@@ -1,0 +1,377 @@
+{
+  "model_name": "RF",
+  "version": "1.0.0",
+  "trained_at": "2026-10-10T05:45:36Z",
+  "dataset": "data/DatasetDSS.xlsx",
+  "sheet": "DuLieu_ML",
+  "sklearn_version": "1.9.1",
+  "python_version": "3.14.7",
+  "rows": {
+    "total": 6000,
+    "train": 4820,
+    "test": 1180
+  },
+  "n_train": 4820,
+  "n_test": 1180,
+  "numeric_features": [
+    "Tmin (°C)",
+    "Tmax (°C)",
+    "Nhiệt độ ngày (°C)",
+    "Giữ ấm",
+    "Thoáng khí",
+    "Vận động",
+    "Chỉn chu"
+  ],
+  "categorical_features": [
+    "Hoàn cảnh",
+    "Phong cách"
+  ],
+  "features": [
+    "Hoàn cảnh",
+    "Phong cách",
+    "Tmin (°C)",
+    "Tmax (°C)",
+    "Nhiệt độ ngày (°C)",
+    "Giữ ấm",
+    "Thoáng khí",
+    "Vận động",
+    "Chỉn chu"
+  ],
+  "target": "Điểm phù hợp (0–10)",
+  "categories": {
+    "Hoàn cảnh": [
+      "Thuyết trình",
+      "Vẽ ngoại cảnh",
+      "Xưởng/Công trình",
+      "Đi học"
+    ],
+    "Phong cách": [
+      "Artsy",
+      "Casual",
+      "Minimalist",
+      "Smart Casual",
+      "Sporty",
+      "Streetwear"
+    ],
+    "Giới tính": [
+      "Nam",
+      "Nữ",
+      "Unisex"
+    ],
+    "Loại TP": [
+      "Chân Váy",
+      "Dép",
+      "Giày",
+      "Quần",
+      "Áo",
+      "Áo khoác",
+      "Đầm"
+    ],
+    "Màu sắc": [
+      "Be",
+      "Be sữa",
+      "Bạc",
+      "Cam",
+      "Hồng",
+      "Hồng pastel",
+      "Kem",
+      "Khaki",
+      "Nhiều màu",
+      "Nâu",
+      "Nâu caramel",
+      "Nâu đậm",
+      "Trong suốt",
+      "Trắng",
+      "Tím",
+      "Tím lavender",
+      "Vàng",
+      "Vàng mustard",
+      "Xanh baby",
+      "Xanh denim nhạt",
+      "Xanh denim đậm",
+      "Xanh dương",
+      "Xanh lá",
+      "Xanh mint",
+      "Xanh navy",
+      "Xanh olive",
+      "Xanh rêu",
+      "Xanh trắng",
+      "Xám",
+      "Xám tro",
+      "Đen",
+      "Đen trắng",
+      "Đỏ",
+      "Đỏ đen",
+      "Đỏ đô"
+    ]
+  },
+  "feature_ranges": {
+    "Tmin (°C)": {
+      "min": 5.0,
+      "max": 29.0
+    },
+    "Tmax (°C)": {
+      "min": 10.0,
+      "max": 40.0
+    },
+    "Nhiệt độ ngày (°C)": {
+      "min": 5.0,
+      "max": 40.0
+    },
+    "Giữ ấm": {
+      "min": 1.0,
+      "max": 5.0
+    },
+    "Thoáng khí": {
+      "min": 1.0,
+      "max": 5.0
+    },
+    "Vận động": {
+      "min": 1.0,
+      "max": 5.0
+    },
+    "Chỉn chu": {
+      "min": 1.0,
+      "max": 5.0
+    }
+  },
+  "metrics_test": {
+    "Mốc đoán trung bình": {
+      "MAE": 2.317802869400098,
+      "RMSE": 2.6850224078314073,
+      "R2": -0.01616917653163985
+    },
+    "KNN": {
+      "MAE": 0.7303954802259888,
+      "RMSE": 1.1757972012130384,
+      "R2": 0.8051344657113688
+    },
+    "RF": {
+      "MAE": 0.272230084745763,
+      "RMSE": 0.4450616337531053,
+      "R2": 0.9720803156460534
+    },
+    "Lai": {
+      "MAE": 0.272230084745763,
+      "RMSE": 0.4450616337531053,
+      "R2": 0.9720803156460534
+    }
+  },
+  "baseline_mae": 2.317802869400098,
+  "error_analysis_test": {
+    "by_activity": {
+      "Thuyết trình": {
+        "rows": 295,
+        "MAE": 0.33535254237288226,
+        "zero_score_rows": 73
+      },
+      "Vẽ ngoại cảnh": {
+        "rows": 295,
+        "MAE": 0.2758593220338984,
+        "zero_score_rows": 66
+      },
+      "Xưởng/Công trình": {
+        "rows": 295,
+        "MAE": 0.2735796610169488,
+        "zero_score_rows": 64
+      },
+      "Đi học": {
+        "rows": 295,
+        "MAE": 0.2041288135593224,
+        "zero_score_rows": 75
+      }
+    },
+    "zero_score": {
+      "all_rows": 6000,
+      "all_zero_rows": 1240,
+      "all_zero_percent": 20.666666666666668,
+      "test_rows": 1180,
+      "test_zero_rows": 278,
+      "test_zero_mae": 0.016726618705035973,
+      "test_nonzero_mae": 0.350977272727273
+    }
+  },
+  "selected_model": "RF",
+  "hybrid_weight": {
+    "rf": 1.0,
+    "knn": 0.0
+  },
+  "hybrid_oof_mae": 0.3156079875518674,
+  "best_k": 3,
+  "group_kfold": {
+    "n_splits": 5,
+    "group_column": "ID_SP",
+    "n_groups_train": 1205
+  },
+  "rf_size_trials": [
+    {
+      "name": "full",
+      "min_samples_leaf": 1,
+      "max_depth": null,
+      "metrics_test": {
+        "MAE": 0.272230084745763,
+        "RMSE": 0.4450616337531053,
+        "R2": 0.9720803156460534
+      },
+      "compressed_bytes": 9312055
+    },
+    {
+      "name": "leaf_2",
+      "min_samples_leaf": 2,
+      "max_depth": null,
+      "metrics_test": {
+        "MAE": 0.28612200163654633,
+        "RMSE": 0.459801632395998,
+        "R2": 0.9702003470705935
+      },
+      "compressed_bytes": 6443466
+    },
+    {
+      "name": "leaf_3",
+      "min_samples_leaf": 3,
+      "max_depth": null,
+      "metrics_test": {
+        "MAE": 0.3043334501957597,
+        "RMSE": 0.4845121452405351,
+        "R2": 0.9669113137486948
+      },
+      "compressed_bytes": 4837619
+    },
+    {
+      "name": "leaf_2_depth_20",
+      "min_samples_leaf": 2,
+      "max_depth": 20,
+      "metrics_test": {
+        "MAE": 0.2864079804623422,
+        "RMSE": 0.46017244247606137,
+        "R2": 0.9701522634337058
+      },
+      "compressed_bytes": 6410337
+    },
+    {
+      "name": "leaf_3_depth_20",
+      "min_samples_leaf": 3,
+      "max_depth": 20,
+      "metrics_test": {
+        "MAE": 0.3043124099017091,
+        "RMSE": 0.48456035276375026,
+        "R2": 0.9669047289685966
+      },
+      "compressed_bytes": 4830454
+    },
+    {
+      "name": "leaf_5_depth_14",
+      "min_samples_leaf": 5,
+      "max_depth": 14,
+      "metrics_test": {
+        "MAE": 0.34649361967831727,
+        "RMSE": 0.5381163635556071,
+        "R2": 0.9591847382692045
+      },
+      "compressed_bytes": 2933628
+    }
+  ],
+  "selected_rf_configuration": {
+    "name": "full",
+    "min_samples_leaf": 1,
+    "max_depth": null,
+    "full_rf_mae": 0.272230084745763,
+    "max_allowed_mae": 0.2776746864406783,
+    "max_mae_regression_percent": 2.0
+  },
+  "confidence_thresholds": {
+    "high_std_max": 0.3680978130877718,
+    "medium_std_max": 0.8016543831352764,
+    "source": "quantiles_test_set",
+    "quantiles": {
+      "high_std_max": 0.3333333333333333,
+      "medium_std_max": 0.6666666666666666
+    }
+  },
+  "confidence_calibration_test": {
+    "Cao": {
+      "rows": 394,
+      "coverage": 0.3338983050847458,
+      "mean_std": 0.1125488220905586,
+      "mae": 0.04266370558375665
+    },
+    "Trung bình": {
+      "rows": 393,
+      "coverage": 0.33305084745762714,
+      "mean_std": 0.5943598334428185,
+      "mae": 0.26297201017811705
+    },
+    "Thấp": {
+      "rows": 393,
+      "coverage": 0.33305084745762714,
+      "mean_std": 1.088474867864341,
+      "mae": 0.511638676844784
+    }
+  },
+  "roundtrip_check": {
+    "features": {
+      "Hoàn cảnh": "Xưởng/Công trình",
+      "Phong cách": "Minimalist",
+      "Tmin (°C)": 12,
+      "Tmax (°C)": 27,
+      "Nhiệt độ ngày (°C)": 39,
+      "Giữ ấm": 2,
+      "Thoáng khí": 3,
+      "Vận động": 3,
+      "Chỉn chu": 3
+    },
+    "score": 0.0034999999999999996,
+    "std_between_trees": 0.049373575928830564,
+    "score_low": 0.0,
+    "score_high": 0.05287357592883056
+  },
+  "feature_importances": [
+    {
+      "feature": "Hoàn cảnh",
+      "importance": 0.05021480374749418
+    },
+    {
+      "feature": "Phong cách",
+      "importance": 0.023512396119318456
+    },
+    {
+      "feature": "Tmin (°C)",
+      "importance": 0.16545770779958183
+    },
+    {
+      "feature": "Tmax (°C)",
+      "importance": 0.2546894166615405
+    },
+    {
+      "feature": "Nhiệt độ ngày (°C)",
+      "importance": 0.44286714198206745
+    },
+    {
+      "feature": "Giữ ấm",
+      "importance": 0.002747672214341983
+    },
+    {
+      "feature": "Thoáng khí",
+      "importance": 0.012211074444733391
+    },
+    {
+      "feature": "Vận động",
+      "importance": 0.028222327215917224
+    },
+    {
+      "feature": "Chỉn chu",
+      "importance": 0.020077459815005066
+    }
+  ],
+  "limitations": [
+    "Nhãn được sinh từ công thức quy tắc; chỉ số R² cao phản ánh phần lớn việc học lại công thức, không phải kiểm chứng sở thích thực tế.",
+    "Train/Test giữ nguyên cột 'Tập' của workbook; đánh giá chỉ phản ánh phân hoạch đã cung cấp.",
+    "Mô hình không sử dụng giới tính, lịch học, vị trí, mưa hoặc gió làm đặc trưng.",
+    "Độ lệch chuẩn giữa các cây RF là chỉ báo phân tán; các nhãn tin cậy chia theo phân vị độ lệch chuẩn trên Test, không phải khoảng tin cậy thống kê.",
+    "Chọn cấu hình giảm kích thước theo MAE trên Test được dùng để đáp ứng ngưỡng suy giảm 2%; kết quả Test vì vậy tham gia lựa chọn kích thước."
+  ],
+  "model_size_bytes": 9365520,
+  "model_size_baseline_bytes": 11000985,
+  "joblib_compression": 9,
+  "model_size_reduction_percent": 14.86653240596183
+}

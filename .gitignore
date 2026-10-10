@@ -1,0 +1,15 @@
+.venv/
+env/
+**/__pycache__/
+*.py[cod]
+.env
+*.db
+*.db-wal
+*.db-shm
+data/app.db
+data/.secret_key
+.pytest_cache/
+**/.pytest_cache/
+pytest-cache-files-*/
+.vscode/
+.codex/
